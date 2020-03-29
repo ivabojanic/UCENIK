@@ -206,8 +206,71 @@ public:
     }
 
 };
+int meni()
+{
+    int op;
+    cout<<"1.Idi kuci."<<endl;
+    cout<<"2.Idi na trening."<<endl;
+    cout<<"3.Idi u biblioteku."<<endl;
+    cout<<"4.Idi u ucionicu."<<endl;
+    cout<<"5.Spavaj."<<endl;
+    cout<<"6.Uci."<<endl;
+    cout<<"7.Treniraj."<<endl;
+    cout<<"8.Polozi godinu."<<endl;
+    cout<<"9.Maturiraj."<<endl;
+    cout<<"10.Kraj."<<endl;
+    cin>>op;
+
+    return op;
+
+}
 int main()
 {
-    cout << "Hello world!" << endl;
+    Ucenik U;
+    bool prom;
+    int broj;
+    int sati = 8;
+
+     do
+    {
+
+    broj = meni();
+
+    switch(broj)
+    {
+    case 1:
+        prom = U.idiKuci();
+        break;
+    case 2:
+        prom = U.idiNaTrening();
+        break;
+    case 3:
+        prom = U.idiUBiblioteku();
+        break;
+    case 4:
+        prom = U.idiUUcionicu();
+        break;
+    case 5:
+        prom = U.spavaj(sati);
+        break;
+    case 6:
+        prom = U.uci();
+        break;
+    case 7:
+        prom = U.treniraj();
+        break;
+    case 8:
+        prom = U.poloziGodinu();
+        break;
+    case 9:
+        prom = U.maturiraj();
+        break;
+    }
+    if (broj<1 || broj>10)
+        cout<<"Ne postoji opcija!"<<endl;
+
+    }while(broj>=1 && broj<=9);
+
     return 0;
 }
+
